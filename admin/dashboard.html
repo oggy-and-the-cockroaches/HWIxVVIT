@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | HWI × VVITU Community Platform</title>
+  
+  <link rel="icon" type="image/svg+xml" href="../logo.svg">
+  <link rel="alternate icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="admin-body">
+
+  <!-- Top Admin Bar -->
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div style="display: flex; align-items: center; gap: var(--spacing-4);">
+        <a href="../index.html" class="admin-brand">
+          <img id="nav-logo-img" src="../logo.svg" alt="HWI Logo" width="36" height="36" style="border-radius: 6px;">
+          <div>
+            <div style="font-weight: var(--font-weight-bold); font-size: var(--font-size-sm); color: var(--color-primary); line-height: 1.2;">
+              HWI × VVITU
+            </div>
+            <div style="font-size: 0.72rem; color: var(--color-text-muted);">
+              Administration Command Center
+            </div>
+          </div>
+        </a>
+        <span class="admin-badge">Admin Mode</span>
+      </div>
+
+      <div class="admin-user-nav">
+        <div id="connection-pill" class="admin-user-pill" title="Supabase Database Status">
+          <span class="status-dot status-dot-warning" id="connection-dot"></span>
+          <span id="connection-text">Checking Supabase...</span>
+        </div>
+
+        <div class="admin-user-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span id="admin-user-email">admin@vvitu.edu.in</span>
+        </div>
+
+        <a href="../index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Preview public website in new tab">
+          Public Site
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+
+        <button type="button" id="btn-sign-out" class="btn btn-secondary btn-sm" style="color: var(--color-error);">
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Main Workspace -->
+  <main class="admin-main">
+
+    <!-- Credentials Status Notice -->
+    <div id="setup-alert" class="admin-alert" style="display: none;">
+      <div>
+        <div class="admin-alert-title">Supabase Database Setup Required</div>
+        <div class="admin-alert-desc">
+          To enable live cloud sync for logo, events, email, and deletions, connect your Supabase project in the <strong>Supabase Setup tab</strong>.
+        </div>
+      </div>
+      <button type="button" class="btn btn-sm btn-secondary" onclick="switchTab('tab-setup')">
+        Configure Supabase
+      </button>
+    </div>
+
+    <!-- Metrics Row -->
+    <div class="metrics-row">
+      <div class="metric-tile">
+        <div class="metric-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value" id="metric-events-count">0</div>
+          <div class="metric-label">Campus Events</div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="metric-icon-wrap" style="background-color: #ECFDF5; color: #059669;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value" id="metric-opps-count">0</div>
+          <div class="metric-label">Hackathons Tracked</div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="metric-icon-wrap" style="background-color: #FDF2F8; color: #DB2777;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value" id="metric-regs-count">0</div>
+          <div class="metric-label">Total Registrations</div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="metric-icon-wrap" style="background-color: #EFF6FF; color: #2563EB;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value" id="metric-msgs-count">0</div>
+          <div class="metric-label">Inquiries Received</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Navigation Tabs -->
+    <div class="admin-tabs" role="tablist">
+      <button type="button" class="admin-tab is-active" data-tab="tab-settings" role="tab" aria-selected="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        Site Configuration (Logo, Gmail, Links)
+      </button>
+
+      <button type="button" class="admin-tab" data-tab="tab-events" role="tab" aria-selected="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Campus Events & Sessions
+      </button>
+
+      <button type="button" class="admin-tab" data-tab="tab-hackathons" role="tab" aria-selected="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        Hackathons & Opportunities
+      </button>
+
+      <button type="button" class="admin-tab" data-tab="tab-messages" role="tab" aria-selected="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Inquiries
+      </button>
+
+      <button type="button" class="admin-tab" data-tab="tab-setup" role="tab" aria-selected="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        Supabase Credentials & Setup
+      </button>
+    </div>
+
+    <!-- ======================================================================
+         TAB 1: SITE SETTINGS (Logo, Gmail, WhatsApp, Headlines)
+         ====================================================================== -->
+    <div id="tab-settings" class="tab-panel is-active" role="tabpanel">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <div>
+            <h2 class="admin-card-title">Live Site Configuration</h2>
+            <p class="admin-card-subtitle">
+              Modify the community logo, queries Gmail, WhatsApp invite URL, and headline copy across the public site.
+            </p>
+          </div>
+          <button type="submit" form="form-site-settings" class="btn btn-primary btn-sm">
+            Save All Changes
+          </button>
+        </div>
+
+        <form id="form-site-settings">
+          <!-- 1. Brand Logo Controls -->
+          <div style="background-color: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-5); margin-bottom: var(--spacing-6);">
+            <h3 style="font-size: var(--font-size-md); font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-4);">
+              Brand Logo & Visual Identity
+            </h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-6); flex-wrap: wrap;">
+              <div style="text-align: center;">
+                <div style="width: 72px; height: 72px; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: #FFFFFF; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: var(--spacing-2);">
+                  <img id="settings-logo-preview" src="../logo.svg" alt="Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <span style="font-size: 0.7rem; color: var(--color-text-muted);">Current Active Logo</span>
+              </div>
+
+              <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: var(--spacing-3);">
+                <div class="form-group">
+                  <label for="setting-logo-url" class="form-label">Logo Path or Image URL</label>
+                  <input type="text" id="setting-logo-url" class="form-input" value="logo.svg" placeholder="logo.svg or https://...">
+                  <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+                    Default vector: <code>logo.svg</code> • High-res raster: <code>logo.png</code> • Or paste a Supabase Storage / external URL.
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="setting-logo-file" class="form-label">Upload New Logo directly to Supabase Storage (Optional)</label>
+                  <input type="file" id="setting-logo-file" class="form-input" accept="image/png, image/svg+xml, image/jpeg, image/webp">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Core Contact Channels -->
+          <div class="form-grid-2" style="margin-bottom: var(--spacing-6);">
+            <div class="form-group">
+              <label for="setting-queries-email" class="form-label">
+                Official Queries Gmail / Email *
+              </label>
+              <input 
+                type="email" 
+                id="setting-queries-email" 
+                class="form-input" 
+                value="ajayhemanth90@gmail.com" 
+                required
+                placeholder="ajayhemanth90@gmail.com"
+              >
+              <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+                Appears in the Contact section, footer, and automated email directives.
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label for="setting-whatsapp-url" class="form-label">
+                Official WhatsApp Community URL *
+              </label>
+              <input 
+                type="url" 
+                id="setting-whatsapp-url" 
+                class="form-input" 
+                value="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" 
+                required
+                placeholder="https://chat.whatsapp.com/..."
+              >
+              <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+                Must be the verified WhatsApp invitation link.
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. Positioning & Headlines -->
+          <div class="form-grid-2" style="margin-bottom: var(--spacing-6);">
+            <div class="form-group">
+              <label for="setting-brand-title" class="form-label">Community Brand Name</label>
+              <input type="text" id="setting-brand-title" class="form-input" value="HWI × VVITU">
+            </div>
+
+            <div class="form-group">
+              <label for="setting-tagline" class="form-label">Community Tagline</label>
+              <input type="text" id="setting-tagline" class="form-input" value="Connecting India's Hackathon Community">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: var(--spacing-6);">
+            <label for="setting-hero-headline" class="form-label">Hero Headline</label>
+            <input type="text" id="setting-hero-headline" class="form-input" value="Your Gateway to India's Hackathon Ecosystem">
+          </div>
+
+          <div class="form-group" style="margin-bottom: var(--spacing-6);">
+            <label for="setting-hero-subheadline" class="form-label">Hero Supporting Text</label>
+            <textarea id="setting-hero-subheadline" class="form-input" rows="3">Discover hackathons, explore technology opportunities, connect with fellow innovators, and stay informed about what's happening across the hackathon community.</textarea>
+          </div>
+
+          <div class="form-grid-2" style="margin-bottom: var(--spacing-6);">
+            <div class="form-group">
+              <label for="setting-campus-location" class="form-label">Campus Location Text</label>
+              <input type="text" id="setting-campus-location" class="form-input" value="VVITU Campus • Technical Education & Innovation Wing">
+            </div>
+
+            <div class="form-group">
+              <label for="setting-events-notice" class="form-label">Events Status Badge Text</label>
+              <input type="text" id="setting-events-notice" class="form-input" value="Will Be Adding Soon">
+            </div>
+          </div>
+
+          <div class="form-actions-bar">
+            <button type="button" id="btn-reset-settings" class="btn btn-secondary btn-sm">
+              Reset to Defaults
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Save Settings to Supabase
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         TAB 2: CAMPUS EVENTS MANAGER (Add, Edit, Delete, Status Toggle)
+         ====================================================================== -->
+    <div id="tab-events" class="tab-panel" role="tabpanel">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <div>
+            <h2 class="admin-card-title">Campus Events & Sessions</h2>
+            <p class="admin-card-subtitle">
+              Add new technical workshops, hackathons, or meetups. Edit or delete existing records.
+            </p>
+          </div>
+          <button type="button" id="btn-add-event" class="btn btn-primary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add New Event
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Event Title</th>
+                <th>Category</th>
+                <th>Dates & Time</th>
+                <th>Venue</th>
+                <th>Capacity</th>
+                <th>Status</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="events-table-body">
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--color-text-muted); padding: var(--spacing-8);">
+                  Loading events...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         TAB 3: HACKATHONS & OPPORTUNITIES MANAGER
+         ====================================================================== -->
+    <div id="tab-hackathons" class="tab-panel" role="tabpanel">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <div>
+            <h2 class="admin-card-title">Hackathons & Opportunities</h2>
+            <p class="admin-card-subtitle">
+              Post verified national/regional hackathons, student innovation challenges, and grant opportunities.
+            </p>
+          </div>
+          <button type="button" id="btn-add-opp" class="btn btn-primary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add Opportunity
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Hackathon / Opportunity</th>
+                <th>Organizer</th>
+                <th>Type</th>
+                <th>Format</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="opps-table-body">
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--color-text-muted); padding: var(--spacing-8);">
+                  Loading hackathons...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         TAB 4: INQUIRIES & CONTACT MESSAGES
+         ====================================================================== -->
+    <div id="tab-messages" class="tab-panel" role="tabpanel">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <div>
+            <h2 class="admin-card-title">Contact Form Inquiries</h2>
+            <p class="admin-card-subtitle">
+              Messages received from students and external organizers via the contact mailbox form.
+            </p>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Sender Name</th>
+                <th>Sender Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody id="messages-table-body">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--color-text-muted); padding: var(--spacing-8);">
+                  No messages received yet.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         TAB 5: SUPABASE CREDENTIALS & SETUP GUIDE
+         ====================================================================== -->
+    <div id="tab-setup" class="tab-panel" role="tabpanel">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <div>
+            <h2 class="admin-card-title">Supabase Connection Settings</h2>
+            <p class="admin-card-subtitle">
+              Enter your Supabase Project URL and Anon Public Key to enable live cloud database and authentication.
+            </p>
+          </div>
+        </div>
+
+        <form id="form-supabase-credentials">
+          <div class="form-group" style="margin-bottom: var(--spacing-4);">
+            <label for="sb-url-input" class="form-label">Supabase Project URL *</label>
+            <input 
+              type="url" 
+              id="sb-url-input" 
+              class="form-input" 
+              placeholder="https://xxxxxxxxxxxxxxxxxxxx.supabase.co"
+              required
+            >
+            <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+              Found in your Supabase Dashboard: <strong>Project Settings > API > Project URL</strong>
+            </span>
+          </div>
+
+          <div class="form-group" style="margin-bottom: var(--spacing-6);">
+            <label for="sb-key-input" class="form-label">Supabase Anon Public API Key *</label>
+            <input 
+              type="text" 
+              id="sb-key-input" 
+              class="form-input" 
+              placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              required
+            >
+            <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+              Found in your Supabase Dashboard: <strong>Project Settings > API > Project API keys > anon (public)</strong>
+            </span>
+          </div>
+
+          <div class="form-actions-bar">
+            <button type="submit" class="btn btn-primary">
+              Save Credentials & Connect
+            </button>
+          </div>
+        </form>
+
+        <!-- Migration Helper -->
+        <div style="margin-top: var(--spacing-8); padding-top: var(--spacing-6); border-top: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-size-md); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">
+            Database SQL Migration Script
+          </h3>
+          <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-bottom: var(--spacing-4);">
+            Run the SQL migration in your Supabase Dashboard SQL Editor to create all required tables, triggers, and Row Level Security policies.
+          </p>
+          <div style="background-color: var(--color-bg-surface); padding: var(--spacing-4); border-radius: var(--radius-md); font-family: var(--font-family-mono); font-size: var(--font-size-xs); color: var(--color-text-secondary); border: 1px solid var(--color-border); overflow-x: auto;">
+            File location: <code>supabase/migrations/20261116000001_initial_schema.sql</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======================================================================
+       MODAL: CREATE / EDIT EVENT
+       ====================================================================== -->
+  <dialog id="event-dialog" class="modal" style="max-width: 680px; width: 95%;">
+    <div class="modal-header">
+      <h3 class="modal-title" id="event-modal-title">Create Campus Event</h3>
+      <button type="button" class="modal-close-btn" data-action="close-event-modal" aria-label="Close dialog">✕</button>
+    </div>
+    <form id="form-event" class="modal-body">
+      <input type="hidden" id="event-id" value="">
+
+      <div class="form-group">
+        <label for="event-title" class="form-label">Event Title *</label>
+        <input type="text" id="event-title" class="form-input" placeholder="e.g. Introduction to Git & Hackathons" required>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="event-category" class="form-label">Category *</label>
+          <select id="event-category" class="form-input" required>
+            <option value="workshop">Workshop</option>
+            <option value="hackathon">Hackathon</option>
+            <option value="tech_talk">Tech Talk</option>
+            <option value="meetup">Meetup</option>
+            <option value="competition">Competition</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="event-status" class="form-label">Status *</label>
+          <select id="event-status" class="form-input" required>
+            <option value="draft">Draft (Hidden from public)</option>
+            <option value="published">Published (Visible on site)</option>
+            <option value="completed">Completed</option>
+            <option value="archived">Archived</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="event-start-date" class="form-label">Start Date & Time *</label>
+          <input type="datetime-local" id="event-start-date" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="event-end-date" class="form-label">End Date & Time *</label>
+          <input type="datetime-local" id="event-end-date" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="event-venue" class="form-label">Venue / Room *</label>
+          <input type="text" id="event-venue" class="form-input" placeholder="e.g. Auditorium B, VVITU" required>
+        </div>
+
+        <div class="form-group">
+          <label for="event-capacity" class="form-label">Max Capacity</label>
+          <input type="number" id="event-capacity" class="form-input" placeholder="e.g. 100" min="1">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="event-reg-deadline" class="form-label">Registration Deadline *</label>
+        <input type="datetime-local" id="event-reg-deadline" class="form-input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="event-summary" class="form-label">Short Summary (Displayed on event cards) *</label>
+        <input type="text" id="event-summary" class="form-input" placeholder="1-2 sentences summarizing the session" required>
+      </div>
+
+      <div class="form-group">
+        <label for="event-description" class="form-label">Full Description *</label>
+        <textarea id="event-description" class="form-input" rows="4" placeholder="Detailed schedule, speakers, topics, prerequisites" required></textarea>
+      </div>
+
+      <div class="form-actions-bar" style="margin-top: var(--spacing-4);">
+        <button type="button" class="btn btn-secondary btn-sm" data-action="close-event-modal">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-sm" id="btn-save-event">Save Event</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ======================================================================
+       MODAL: CREATE / EDIT OPPORTUNITY
+       ====================================================================== -->
+  <dialog id="opp-dialog" class="modal" style="max-width: 600px; width: 95%;">
+    <div class="modal-header">
+      <h3 class="modal-title" id="opp-modal-title">Add Hackathon / Opportunity</h3>
+      <button type="button" class="modal-close-btn" data-action="close-opp-modal" aria-label="Close dialog">✕</button>
+    </div>
+    <form id="form-opp" class="modal-body">
+      <input type="hidden" id="opp-id" value="">
+
+      <div class="form-group">
+        <label for="opp-title" class="form-label">Opportunity / Hackathon Name *</label>
+        <input type="text" id="opp-title" class="form-input" required placeholder="e.g. Smart Mobility Hackathon">
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="opp-organizer" class="form-label">Organizer Body *</label>
+          <input type="text" id="opp-organizer" class="form-input" required placeholder="e.g. HackWithIndia / Tech Corp">
+        </div>
+
+        <div class="form-group">
+          <label for="opp-type" class="form-label">Opportunity Type *</label>
+          <select id="opp-type" class="form-input" required>
+            <option value="hackathon">Hackathon</option>
+            <option value="grant">Grant</option>
+            <option value="fellowship">Fellowship</option>
+            <option value="hiring_challenge">Hiring Challenge</option>
+            <option value="open_source">Open Source</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="opp-format" class="form-label">Format *</label>
+          <select id="opp-format" class="form-input" required>
+            <option value="online">Online</option>
+            <option value="offline">In-Person / On-Site</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="opp-deadline" class="form-label">Registration Deadline *</label>
+          <input type="datetime-local" id="opp-deadline" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="opp-url" class="form-label">External Registration URL *</label>
+        <input type="url" id="opp-url" class="form-input" required placeholder="https://...">
+      </div>
+
+      <div class="form-group">
+        <label for="opp-desc" class="form-label">Short Description *</label>
+        <textarea id="opp-desc" class="form-input" rows="3" required placeholder="Brief description of the challenge and eligibility"></textarea>
+      </div>
+
+      <div class="form-actions-bar" style="margin-top: var(--spacing-4);">
+        <button type="button" class="btn btn-secondary btn-sm" data-action="close-opp-modal">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-sm" id="btn-save-opp">Save Opportunity</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="admin-toast-container" aria-live="polite"></div>
+
+  <!-- Official Supabase JS SDK (CDN-based, zero build tools) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Modular Controller Script -->
+  <script type="module" src="../js/admin/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Login | HWI × VVITU</title>
+  <link rel="icon" type="image/svg+xml" href="../logo.svg">
+  <link rel="alternate icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-bg-surface);
+      padding: var(--spacing-6);
+    }
+    .login-box {
+      background-color: var(--color-bg-body);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 440px;
+      padding: var(--spacing-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-6);
+    }
+    .login-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-2);
+    }
+    .login-status-notice {
+      background-color: var(--color-accent-subtle);
+      border: 1px solid var(--color-accent-border);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-3) var(--spacing-4);
+      font-size: var(--font-size-xs);
+      color: var(--color-accent-hover);
+      line-height: var(--line-height-base);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <a href="../index.html" class="brand" style="margin-bottom: var(--spacing-2);">
+          <img src="../logo.svg" alt="HackWithIndia Logo" class="brand-logo-img" width="48" height="48">
+          <div class="brand-text" style="text-align: left;">
+            <span class="brand-title">HWI <span class="brand-accent">×</span> VVITU</span>
+            <span class="brand-subtitle">Administrator Portal</span>
+          </div>
+        </a>
+        <h1 style="font-size: var(--font-size-xl);">Admin Authentication</h1>
+        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+          Restricted access for authorized community leads and organizers.
+        </p>
+      </div>
+
+      <div id="protocol-warning" class="login-status-notice" style="display: none; background-color: #FEF3C7; border-color: #FCD34D; color: #92400E;">
+        <strong>Local File Detected (file://):</strong>
+        For the best experience, run <code>start-server.bat</code> or serve via VS Code Live Server on <code>http://localhost:8000</code>.
+      </div>
+
+      <div class="login-status-notice" id="login-notice" role="status">
+        <strong>Supabase Connected:</strong>
+        Sign in with <code>ajayhemanth90@gmail.com</code> and the password you set in Supabase.
+      </div>
+
+      <form id="admin-login-form">
+        <div class="form-group" style="margin-bottom: var(--spacing-4);">
+          <label for="admin-email" class="form-label">Administrator Email</label>
+          <input 
+            type="email" 
+            id="admin-email" 
+            class="form-input" 
+            placeholder="ajayhemanth90@gmail.com" 
+            required 
+            autocomplete="username"
+            value="ajayhemanth90@gmail.com"
+          >
+        </div>
+
+        <div class="form-group" style="margin-bottom: var(--spacing-6);">
+          <label for="admin-password" class="form-label">Password</label>
+          <input 
+            type="password" 
+            id="admin-password" 
+            class="form-input" 
+            placeholder="••••••••••••" 
+            required 
+            autocomplete="current-password"
+          >
+        </div>
+
+        <div id="login-msg" class="form-feedback form-feedback-error" style="margin-bottom: var(--spacing-4); display: none; line-height: 1.4;"></div>
+        <div id="login-success-msg" class="form-feedback form-feedback-success" style="margin-bottom: var(--spacing-4); display: none;"></div>
+
+        <button type="submit" id="btn-login" class="btn btn-primary" style="width: 100%; margin-bottom: var(--spacing-3);">
+          Sign In to Admin Dashboard
+        </button>
+
+        <button type="button" id="btn-local-admin" class="btn btn-secondary btn-sm" style="width: 100%;">
+          ⚡ Enter Admin Mode (Instant Local Access)
+        </button>
+      </form>
+
+      <div style="text-align: center; border-top: 1px solid var(--color-border); padding-top: var(--spacing-4);">
+        <a href="../index.html" class="footer-link" style="display: inline-flex; align-items: center; gap: 4px;">
+          ← Return to Public Homepage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Supabase Library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Standalone Login Handler (Runs cleanly on both file:// and http://) -->
+  <script>
+    (function() {
+      const SUPABASE_URL = 'https://kkyhymfnjqdjqdnifdcm.supabase.co';
+      const SUPABASE_KEY = localStorage.getItem('sb_anon_key') || 'sb_publishable_i30NxHoOexEBItf2n1SogA_jROqbqku';
+
+      // Protocol check
+      if (window.location.protocol === 'file:') {
+        const protoWarn = document.getElementById('protocol-warning');
+        if (protoWarn) protoWarn.style.display = 'block';
+      }
+
+      // Initialize Supabase Client
+      let supabaseClient = null;
+      if (window.supabase && window.supabase.createClient) {
+        try {
+          supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+            auth: {
+              persistSession: true,
+              autoRefreshToken: true,
+              detectSessionInUrl: true
+            }
+          });
+        } catch (e) {
+          console.error('[Supabase Init Error]', e);
+        }
+      }
+
+      const form = document.getElementById('admin-login-form');
+      const msg = document.getElementById('login-msg');
+      const successMsg = document.getElementById('login-success-msg');
+      const btn = document.getElementById('btn-login');
+      const localBtn = document.getElementById('btn-local-admin');
+
+      // 1. Instant Local Admin Bypass Button
+      if (localBtn) {
+        localBtn.addEventListener('click', function() {
+          localStorage.setItem('hwi_admin_logged_in', 'true');
+          localStorage.setItem('hwi_admin_user', JSON.stringify({ email: 'ajayhemanth90@gmail.com', role: 'admin' }));
+          successMsg.textContent = 'Local Admin Mode activated. Opening Command Center...';
+          successMsg.style.display = 'block';
+          setTimeout(function() {
+            window.location.href = 'dashboard.html';
+          }, 300);
+        });
+      }
+
+      // 2. Supabase Form Submit Handler
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          msg.style.display = 'none';
+          successMsg.style.display = 'none';
+
+          const email = document.getElementById('admin-email').value.trim();
+          const password = document.getElementById('admin-password').value;
+
+          btn.disabled = true;
+          btn.textContent = 'Verifying credentials...';
+
+          if (!supabaseClient) {
+            msg.innerHTML = '<strong>Supabase library not loaded.</strong> Click <em>"Enter Admin Mode (Instant Local Access)"</em> above to access dashboard.';
+            msg.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Sign In to Admin Dashboard';
+            return;
+          }
+
+          try {
+            const res = await supabaseClient.auth.signInWithPassword({
+              email: email,
+              password: password
+            });
+
+            if (res.error) {
+              const errText = res.error.message || 'Login failed';
+              let helpText = '';
+
+              if (errText.toLowerCase().includes('email not confirmed')) {
+                helpText = '<br><br>👉 <strong>Fix:</strong> In your <a href="https://supabase.com/dashboard/project/kkyhymfnjqdjqdnifdcm/auth/users" target="_blank" style="text-decoration: underline;">Supabase Dashboard &gt; Authentication &gt; Users</a>, find <code>' + email + '</code> and click <strong>"Confirm Email"</strong>. Or turn off <em>"Confirm email"</em> under Authentication &gt; Providers &gt; Email.';
+              } else if (errText.toLowerCase().includes('invalid login credentials')) {
+                helpText = '<br><br>👉 <strong>Fix:</strong> The password does not match the user in Supabase. Check caps lock or reset the password under Supabase &gt; Authentication &gt; Users.';
+              }
+
+              msg.innerHTML = '<strong>' + errText + '</strong>' + helpText;
+              msg.style.display = 'block';
+              btn.disabled = false;
+              btn.textContent = 'Sign In to Admin Dashboard';
+              return;
+            }
+
+            // Login successful
+            localStorage.setItem('hwi_admin_logged_in', 'true');
+            if (res.data && res.data.user) {
+              localStorage.setItem('hwi_admin_user', JSON.stringify(res.data.user));
+            }
+
+            successMsg.textContent = 'Authentication verified! Opening Admin Dashboard...';
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+              window.location.href = 'dashboard.html';
+            }, 500);
+
+          } catch (err) {
+            msg.innerHTML = '<strong>Connection error:</strong> ' + (err.message || err);
+            msg.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Sign In to Admin Dashboard';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

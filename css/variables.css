@@ -1,0 +1,118 @@
+/**
+ * Design Tokens & CSS Custom Properties
+ * Light Theme System for HWI × VVITU Community Platform
+ */
+
+:root {
+  /* Brand & Theme Colors */
+  --color-primary: #0A2540;        /* Deep Navy Authority */
+  --color-primary-hover: #071C30;
+  --color-primary-light: #1E3A5F;
+  
+  --color-accent: #0066FF;         /* Electric Tech Blue */
+  --color-accent-hover: #0052CC;
+  --color-accent-subtle: #EFF6FF;  /* Soft Ice Blue */
+  --color-accent-border: #BFDBFE;  /* Crisp blue outline */
+  
+  /* Neutral Backgrounds (Light Theme Only) */
+  --color-bg-body: #FFFFFF;
+  --color-bg-surface: #F8FAFC;     /* Slate 50 */
+  --color-bg-card: #FFFFFF;
+  --color-bg-muted: #F1F5F9;       /* Slate 100 */
+  --color-bg-hover: #F8FAFC;
+  
+  /* Text Typography Colors */
+  --color-text-primary: #0F172A;   /* Slate 900 - High Contrast */
+  --color-text-secondary: #334155; /* Slate 700 - Highly Legible */
+  --color-text-muted: #64748B;     /* Slate 500 */
+  --color-text-inverted: #FFFFFF;
+  
+  /* Functional / Status Colors */
+  --color-success: #059669;
+  --color-success-bg: #ECFDF5;
+  --color-success-border: #A7F3D0;
+  
+  --color-warning: #D97706;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-border: #FDE68A;
+  
+  --color-error: #DC2626;
+  --color-error-bg: #FEF2F2;
+  --color-error-border: #FECACA;
+  
+  /* Borders & Dividers */
+  --color-border: #E2E8F0;         /* Slate 200 */
+  --color-border-subtle: #F1F5F9;  /* Slate 100 */
+  --color-border-strong: #CBD5E1;  /* Slate 300 */
+  --color-border-focus: #0066FF;
+  
+  /* Typography Scale */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-md: 1.125rem;    /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.875rem;   /* 30px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 3rem;       /* 48px */
+  --font-size-hero: 3.5rem;    /* 56px */
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.35;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.75;
+  
+  /* Spacing Scale */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  
+  /* Layout Dimensions */
+  --container-max-width: 1200px;
+  --container-padding: 1.5rem;
+  --header-height: 4.5rem; /* 72px */
+  
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  /* Shadows (Refined, subtle, non-blurry) */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 8px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  --shadow-card-hover: 0 16px 32px -4px rgba(10, 37, 64, 0.09), 0 4px 8px -2px rgba(10, 37, 64, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-Index Hierarchy */
+  --z-header: 100;
+  --z-backdrop: 200;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HackWithIndia (HWI) × VVITU — Connecting India's Hackathon Community with student innovators at VVITU. Discover hackathons, explore opportunities, and join the verified WhatsApp community.">
+  <title>HackWithIndia × VVITU | Connecting India's Hackathon Community</title>
+  
+  <!-- Official Brand Favicons -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="alternate icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- Modular Design System Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessible Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Navigation Header -->
+  <header class="header" data-header>
+    <div class="container header-container">
+      <!-- Community Branding Mark -->
+      <a href="#hero" class="brand" aria-label="HackWithIndia times VVITU Home">
+        <img src="logo.svg" alt="HackWithIndia Logo" class="brand-logo-img" width="40" height="40">
+        <div class="brand-text">
+          <span class="brand-title">HWI <span class="brand-accent">×</span> VVITU</span>
+          <span class="brand-subtitle">Hackathon Community</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link is-active">Home</a></li>
+          <li><a href="#hackathons" class="nav-link">Discover Hackathons</a></li>
+          <li><a href="#opportunities" class="nav-link">Opportunities</a></li>
+          <li><a href="#value" class="nav-link">Why Join</a></li>
+          <li><a href="#events" class="nav-link">Events</a></li>
+          <li><a href="#notifications" class="nav-link">Announcements</a></li>
+          <li><a href="#whatsapp" class="nav-link">WhatsApp Group</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+            </svg>
+            Join WhatsApp
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button 
+        type="button" 
+        class="menu-toggle" 
+        data-menu-toggle 
+        aria-label="Toggle navigation menu" 
+        aria-expanded="false" 
+        aria-controls="mobile-nav"
+      >
+        <span class="menu-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div class="mobile-nav-backdrop" data-mobile-backdrop aria-hidden="true"></div>
+  <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand">
+        <img src="logo.svg" alt="HackWithIndia Logo" class="brand-logo-img" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-title">HWI <span class="brand-accent">×</span> VVITU</span>
+        </div>
+      </div>
+      <button type="button" class="modal-close-btn" data-menu-toggle aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+      <li><a href="#hackathons" class="mobile-nav-link">Discover Hackathons</a></li>
+      <li><a href="#opportunities" class="mobile-nav-link">Opportunities Board</a></li>
+      <li><a href="#value" class="mobile-nav-link">Why Students Participate</a></li>
+      <li><a href="#events" class="mobile-nav-link">Campus Events <span class="badge badge-pending" style="font-size: 0.65rem; margin-left: 4px;">Adding Soon</span></a></li>
+      <li><a href="#notifications" class="mobile-nav-link">Announcements</a></li>
+      <li><a href="#whatsapp" class="mobile-nav-link">WhatsApp Community</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact & Location</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="width: 100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+        </svg>
+        Join WhatsApp Community
+      </a>
+      <a href="admin/login.html" class="footer-admin-link" style="justify-content: center; margin-top: 0.5rem;">
+        Admin Portal
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-initiative-tag">
+            <span class="hero-tag-pulse" aria-hidden="true"></span>
+            <span class="hero-tag-text">Connecting India's Hackathon Community • VVITU Chapter</span>
+          </div>
+
+          <h1 class="hero-title">
+            Your Gateway to India's <span class="hero-title-highlight">Hackathon Ecosystem</span>
+          </h1>
+
+          <p class="hero-description">
+            Discover hackathons, explore technology opportunities, connect with fellow innovators, and stay informed about what's happening across the hackathon community.
+          </p>
+
+          <!-- Mandatory Requirement 1: Hero Section WhatsApp CTA -->
+          <div class="hero-ctas">
+            <a href="#hackathons" class="btn btn-primary btn-lg">
+              Explore Hackathons
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+              Join WhatsApp Community
+            </a>
+          </div>
+
+          <div class="hero-trust-notes">
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>National Affiliate: HackWithIndia</span>
+            </div>
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>Campus Chapter: VVITU</span>
+            </div>
+            <div class="trust-item">
+              <svg class="trust-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Zero Fabricated Statistics Policy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Technical Visual (CSS/SVG Ecosystem Hub Monitor) -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="logo.svg" alt="" width="16" height="16" aria-hidden="true">
+                <span class="window-title">hackwithindia.network // ecosystem-hub</span>
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <div class="tech-node-list">
+                <div class="tech-node-row">
+                  <div class="node-label">
+                    <div class="node-icon-wrap">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      </svg>
+                    </div>
+                    <div>
+                      <div>Hackathon Discovery</div>
+                      <div style="font-size: 0.72rem; font-weight: normal; color: var(--color-text-muted);">National and regional events</div>
+                    </div>
+                  </div>
+                  <span class="node-status-badge">CURATED</span>
+                </div>
+
+                <div class="tech-node-row">
+                  <div class="node-label">
+                    <div class="node-icon-wrap">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div>Registration Opportunities</div>
+                      <div style="font-size: 0.72rem; font-weight: normal; color: var(--color-text-muted);">Verified portals & deadlines</div>
+                    </div>
+                  </div>
+                  <span class="node-status-badge">TRACKED</span>
+                </div>
+
+                <div class="tech-node-row">
+                  <div class="node-label">
+                    <div class="node-icon-wrap">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div>Event Announcements</div>
+                      <div style="font-size: 0.72rem; font-weight: normal; color: var(--color-text-muted);">Verified schedule drops</div>
+                    </div>
+                  </div>
+                  <span class="node-status-badge">ADDING SOON</span>
+                </div>
+
+                <div class="tech-node-row">
+                  <div class="node-label">
+                    <div class="node-icon-wrap">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div>Student Community</div>
+                      <div style="font-size: 0.72rem; font-weight: normal; color: var(--color-text-muted);">Collaborative peer discussions</div>
+                    </div>
+                  </div>
+                  <span class="node-status-badge">COMMUNITY</span>
+                </div>
+              </div>
+
+              <div class="hero-terminal-foot">
+                <span class="terminal-prompt">$</span>
+                <span>hwi-gateway --status=active --community=india --chapter=vvitu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Discover Hackathons -->
+    <section id="hackathons" class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">NATIONAL DISCOVERY</span>
+          <h2 class="section-title">Discover Hackathons</h2>
+          <p class="section-subtitle">
+            Explore national and regional hackathons. Find verified competitions, registration windows, and community initiatives.
+          </p>
+        </div>
+
+        <!-- Format Filter Bar -->
+        <div class="hackathon-filter-bar" role="tablist" aria-label="Hackathon format filters">
+          <button type="button" class="hackathon-filter-tab is-active" data-format="all" role="tab" aria-selected="true">
+            All Formats
+          </button>
+          <button type="button" class="hackathon-filter-tab" data-format="online" role="tab" aria-selected="false">
+            Online Hackathons
+          </button>
+          <button type="button" class="hackathon-filter-tab" data-format="offline" role="tab" aria-selected="false">
+            In-Person / On-Site
+          </button>
+          <button type="button" class="hackathon-filter-tab" data-format="hybrid" role="tab" aria-selected="false">
+            Hybrid
+          </button>
+        </div>
+
+        <!-- Dynamic Hackathons Container (Hydrated by js/modules/hackathonsModule.js) -->
+        <div id="hackathons-container">
+          <div class="hackathons-empty-state" role="status">
+            <div class="empty-state-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+            <h3 class="empty-state-title">Hackathon Discovery Pipeline</h3>
+            <p class="empty-state-desc">
+              New hackathon opportunities will appear here. Stay connected for upcoming announcements.
+            </p>
+            <div class="empty-state-badges">
+              <span class="badge badge-category">National Hackathons</span>
+              <span class="badge badge-category">Student Competitions</span>
+              <span class="badge badge-category">Innovation Challenges</span>
+            </div>
+            <div class="empty-state-actions" style="margin-top: 1.25rem;">
+              <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                Join WhatsApp for Announcements
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Never Miss a Hackathon (Notification Preview) -->
+    <section id="notifications" class="section">
+      <div class="container">
+        <div class="notifications-grid">
+          <div>
+            <span class="section-tag">COMMUNITY DISPATCH</span>
+            <h2 class="section-title">Never Miss a Hackathon</h2>
+            <p class="section-subtitle" style="text-align: left; margin: 0 0 var(--spacing-4) 0;">
+              Timing is essential in hackathons. The HWI × VVITU platform helps students track essential milestones so you stay informed when opportunities open.
+            </p>
+
+            <div class="notifications-feature-list">
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Newly Announced Hackathons:</strong> Information when verified hackathons open for participation.</div>
+              </div>
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Registration Openings:</strong> Prompt notices when official application portals go live.</div>
+              </div>
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Approaching Deadlines:</strong> Reminders ahead of registration cutoffs and submission checkpoints.</div>
+              </div>
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Workshop Announcements:</strong> Practical sessions covering software engineering fundamentals.</div>
+              </div>
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Technical Events & Meetups:</strong> Campus orientations, technical discussions, and project showcases.</div>
+              </div>
+              <div class="notification-feature-item">
+                <div class="feature-check-icon" aria-hidden="true">✓</div>
+                <div><strong>Important Participation Details:</strong> Official eligibility guidelines, problem briefs, and schedule updates.</div>
+              </div>
+            </div>
+
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-md">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+              Join WhatsApp for Announcements
+            </a>
+          </div>
+
+          <!-- Notification-Style Visual Preview Box (Strictly Labeled as Design Preview) -->
+          <div class="notification-preview-box" aria-label="Visual preview of community notifications">
+            <!-- Explicit Requirement 3 Notice Banner -->
+            <div class="preview-notice-banner" role="status">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span><strong>Design Preview:</strong> The cards below are illustrative UI templates. No active announcements are currently published on this preview.</span>
+            </div>
+
+            <div class="notification-preview-header">
+              <span style="font-family: var(--font-family-mono); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); color: var(--color-primary);">
+                PREVIEW: DISPATCH STREAM TEMPLATES
+              </span>
+              <span class="badge badge-category" style="font-size: 0.68rem;">UI MOCKUP</span>
+            </div>
+
+            <div class="notification-preview-stack">
+              <!-- Sample Template Card 1 -->
+              <div class="notification-preview-card">
+                <div class="notification-card-top">
+                  <span class="notification-card-tag tag-alert">● Sample Template: Hackathon Notice</span>
+                  <span class="notification-time">Illustrative Format</span>
+                </div>
+                <div class="notification-card-title">Sample: National Hackathon Announcement</div>
+                <div class="notification-card-body">Template layout for displaying verified hackathon names, eligibility criteria, and organizer registration links.</div>
+              </div>
+
+              <!-- Sample Template Card 2 -->
+              <div class="notification-preview-card">
+                <div class="notification-card-top">
+                  <span class="notification-card-tag tag-deadline">● Sample Template: Deadline Notice</span>
+                  <span class="notification-time">Illustrative Format</span>
+                </div>
+                <div class="notification-card-title">Sample: Registration Deadline Notification</div>
+                <div class="notification-card-body">Template layout for displaying approaching registration closure dates and submission checkpoints.</div>
+              </div>
+
+              <!-- Sample Template Card 3 -->
+              <div class="notification-preview-card">
+                <div class="notification-card-top">
+                  <span class="notification-card-tag tag-workshop">● Sample Template: Workshop Notice</span>
+                  <span class="notification-time">Illustrative Format</span>
+                </div>
+                <div class="notification-card-title">Sample: Technical Workshop Schedule</div>
+                <div class="notification-card-body">Template layout for announcing technical session topics, prerequisites, and schedules.</div>
+              </div>
+            </div>
+
+            <p style="font-size: 0.72rem; color: var(--color-text-muted); text-align: center; margin-top: 4px;">
+              * Illustrative UI preview. Real announcements will appear here once verified and published by chapter leads.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mandatory Requirement 1: Dedicated WhatsApp Community Section -->
+    <section id="whatsapp" class="whatsapp-section">
+      <div class="container">
+        <div class="whatsapp-card">
+          <div class="whatsapp-card-content">
+            <div class="whatsapp-verified-pill" style="align-self: flex-start;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+              <span>Official Community Channel</span>
+            </div>
+            <h2 class="section-title" style="margin-bottom: 0;">Join the Official HWI × VVITU WhatsApp Community</h2>
+            <p class="section-subtitle" style="text-align: left; margin: 0;">
+              The primary verified communication channel for student developers at VVITU. Connect with peers, receive hackathon announcements, and stay informed on chapter activities.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+              <li style="display: flex; align-items: center; gap: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                <span style="color: #059669; font-weight: bold;">✓</span> Direct announcements for upcoming hackathons and registration dates
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                <span style="color: #059669; font-weight: bold;">✓</span> Student community discussions and peer collaboration
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                <span style="color: #059669; font-weight: bold;">✓</span> Verified chapter links and official updates
+              </li>
+            </ul>
+          </div>
+          <div class="whatsapp-card-action">
+            <div style="font-size: var(--font-size-xs); font-family: var(--font-family-mono); color: var(--color-text-muted);">
+              OFFICIAL INVITATION LINK
+            </div>
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+              Join WhatsApp Community
+            </a>
+            <span style="font-size: 0.72rem; color: var(--color-text-muted);">
+              Opens official invitation link in a new tab
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Upcoming Opportunities Pathways -->
+    <section id="opportunities" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">OPPORTUNITY BOARD</span>
+          <h2 class="section-title">Upcoming Opportunities & Pathways</h2>
+          <p class="section-subtitle">
+            Explore the diverse avenues through which HWI × VVITU connects students to hackathon-related opportunities.
+          </p>
+        </div>
+
+        <div class="opportunities-grid">
+          <!-- Opportunity 1 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Competitive Programming</span>
+            <h3 class="opp-card-title">National Hackathons</h3>
+            <p class="opp-card-desc">
+              Competitive hackathons bringing together collegiate engineers to design, build, and pitch software prototypes under deadline constraints.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>External competition visibility</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Practical problem-solving</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+
+          <!-- Opportunity 2 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Student Competitions</span>
+            <h3 class="opp-card-title">College-Level Hackathons</h3>
+            <p class="opp-card-desc">
+              Campus and regional competitions designed to introduce students to collaborative problem solving, team coding, and rapid prototyping.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Approachable entry for beginners</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Collegiate peer collaboration</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+
+          <!-- Opportunity 3 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Skill Workshops</span>
+            <h3 class="opp-card-title">Technical Workshops</h3>
+            <p class="opp-card-desc">
+              Practical technical sessions covering software engineering fundamentals, database systems, modern web tools, and version control workflows.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Hands-on coding exercises</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Deployable project artifacts</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+
+          <!-- Opportunity 4 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Problem Solving</span>
+            <h3 class="opp-card-title">Innovation Challenges</h3>
+            <p class="opp-card-desc">
+              Thematic challenges where students explore practical solutions for technological, civic, and educational problem statements.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Practical problem definition</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Peer review and evaluation</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+
+          <!-- Opportunity 5 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Open Source</span>
+            <h3 class="opp-card-title">Open-Source Exploration</h3>
+            <p class="opp-card-desc">
+              Opportunities to learn version control practices, explore open-source software, and contribute to collaborative community projects.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Git and GitHub workflow practices</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Collaborative code review basics</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+
+          <!-- Opportunity 6 -->
+          <article class="opp-card">
+            <span class="badge badge-category opp-card-badge">Developer Network</span>
+            <h3 class="opp-card-title">Developer Community Events</h3>
+            <p class="opp-card-desc">
+              Technical talks, peer project presentations, and developer discussions focused on software engineering tooling and best practices.
+            </p>
+            <div class="opp-highlights-list">
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Peer networking & discussions</span>
+              </div>
+              <div class="opp-highlight-item">
+                <svg class="opp-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Exposure to modern development tools</span>
+              </div>
+            </div>
+            <span class="badge badge-pending" style="align-self: flex-start; margin-top: auto;">
+              Category Overview • Opportunities Posted as Verified
+            </span>
+          </article>
+        </div>
+
+        <div class="opp-notice" role="note" style="margin-top: var(--spacing-8);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span>
+            <strong>Content Integrity Notice:</strong> The above represents the six opportunity categories supported by our platform. Individual hackathon and event listings are published only after official verification.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Community Value ("Why Students Participate") -->
+    <section id="value" class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">COMMUNITY VALUE</span>
+          <h2 class="section-title">Why Students Participate in HWI × VVITU</h2>
+          <p class="section-subtitle">
+            A student-focused platform designed to expand technical boundaries, connect you with hackathons, and accelerate practical competence.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <!-- Value 1 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Discover Beyond Campus</h3>
+            <p class="value-card-desc">
+              Gain visibility into external hackathons and developer events beyond institutional boundaries.
+            </p>
+          </article>
+
+          <!-- Value 2 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Stay Informed on Announcements</h3>
+            <p class="value-card-desc">
+              Receive timely updates on hackathon launches, eligibility rules, and submission deadlines before windows close.
+            </p>
+          </article>
+
+          <!-- Value 3 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Collaborate with Peers</h3>
+            <p class="value-card-desc">
+              Connect with fellow student programmers, designers, and problem solvers to form hackathon teams.
+            </p>
+          </article>
+
+          <!-- Value 4 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Develop Practical Technical Skills</h3>
+            <p class="value-card-desc">
+              Apply classroom theory to practical software problems, learning how to debug, architect, and ship code.
+            </p>
+          </article>
+
+          <!-- Value 5 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Explore Workshops & Tech Events</h3>
+            <p class="value-card-desc">
+              Participate in student-organized sessions covering Git workflows, APIs, databases, and deployment basics.
+            </p>
+          </article>
+
+          <!-- Value 6 -->
+          <article class="value-card">
+            <div class="value-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Participate in the Wider Ecosystem</h3>
+            <p class="value-card-desc">
+              Connect directly with India’s broader developer community and learn from experienced participants nationwide.
+            </p>
+          </article>
+        </div>
+
+        <p style="text-align: center; font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: var(--spacing-8);">
+          * Realistic Outcomes: HWI × VVITU provides access to opportunities and community collaboration. Individual progress depends on student effort, practice, and teamwork.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 5: Campus Community Events -->
+    <section id="events" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div style="display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-2); margin-bottom: var(--spacing-3);">
+            <span class="section-tag" style="margin-bottom: 0;">CAMPUS ACTIVITIES</span>
+            <span class="badge badge-pending">Will Be Adding Soon</span>
+          </div>
+          <h2 class="section-title">Campus Events & Sessions</h2>
+          <p class="section-subtitle">
+            Local VVITU chapter workshops, orientation meetups, and preparation sessions — confirmed schedule will be adding soon.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="event-filter-bar" role="tablist" aria-label="Event category filters">
+          <button type="button" class="event-filter-tab is-active" data-category="all" role="tab" aria-selected="true">
+            All Sessions
+          </button>
+          <button type="button" class="event-filter-tab" data-category="workshop" role="tab" aria-selected="false">
+            Workshops
+          </button>
+          <button type="button" class="event-filter-tab" data-category="tech_talk" role="tab" aria-selected="false">
+            Tech Talks
+          </button>
+        </div>
+
+        <!-- Dynamic Events Container (Hydrated by js/modules/eventsModule.js) -->
+        <div id="events-container">
+          <div class="events-empty-state" role="status">
+            <div class="empty-state-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div style="margin-bottom: var(--spacing-3);">
+              <span class="badge badge-pending">Will Be Adding Soon</span>
+            </div>
+            <h3 class="empty-state-title">Events Will Be Added Soon</h3>
+            <p class="empty-state-desc">
+              The HWI × VVITU executive team is actively preparing the upcoming semester’s technical hackathons,
+              hands-on workshops, and developer meetups. Confirmed dates, venue details, and registration links will be adding soon.
+            </p>
+            <div class="empty-state-actions">
+              <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                Join WhatsApp for Updates
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Notification Channels Architecture (Accurate Platform Status) -->
+    <section id="join" class="join-section">
+      <div class="container">
+        <div class="join-card">
+          <div class="join-card-content">
+            <span class="join-tag">COMMUNITY ACCESS</span>
+            <h2 class="join-title">Connect with the HWI × VVITU Student Community</h2>
+            <p class="join-desc">
+              Whether you are preparing for your first hackathon or building software projects, connect with fellow students across VVITU. Stay updated on competitions, workshops, and community activities.
+            </p>
+          </div>
+
+          <div class="join-action-box">
+            <div class="join-step-list">
+              <div class="join-step">
+                <span class="join-step-num">1</span>
+                <span>Discover hackathons on this platform</span>
+              </div>
+              <div class="join-step">
+                <span class="join-step-num">2</span>
+                <span>Join our official WhatsApp group</span>
+              </div>
+              <div class="join-step">
+                <span class="join-step-num">3</span>
+                <span>Participate in chapter events and sessions</span>
+              </div>
+            </div>
+
+            <!-- Mandatory Requirement 1: CTA linking to WhatsApp -->
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" style="width: 100%;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+              Join WhatsApp Community
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Architecture Channels (Requirement 4: Accurate Platform Status) -->
+        <div class="channels-grid">
+          <div class="channel-card">
+            <div class="channel-header">
+              <div class="channel-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <span class="badge badge-category">STATIC PREVIEW • MILESTONE 1</span>
+            </div>
+            <h4 class="channel-title">Static Discovery Interface</h4>
+            <p class="channel-desc">
+              Currently functioning as a static frontend interface. Live database querying and dynamic data submission will be activated upon Supabase backend deployment in upcoming phases.
+            </p>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <div class="channel-icon" aria-hidden="true" style="color: #25D366;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+                </svg>
+              </div>
+              <span class="badge badge-open">ACTIVE CHANNEL</span>
+            </div>
+            <h4 class="channel-title">Official WhatsApp Community</h4>
+            <p class="channel-desc">
+              The verified WhatsApp group is active for student discussion, hackathon announcements, and direct community communication.
+            </p>
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-outline btn-sm" style="margin-top: auto;">
+              Open WhatsApp Group
+            </a>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <div class="channel-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="badge badge-upcoming">PLANNED • PHASE 7</span>
+            </div>
+            <h4 class="channel-title">Automated Email Alerts</h4>
+            <p class="channel-desc">
+              Direct automated email alerts for newly posted hackathons and approaching deadlines. Planned for implementation with Supabase Auth in Phase 7.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Contact & Channels -->
+    <section id="contact" class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">COMMUNICATION</span>
+          <h2 class="section-title">Official Community Channels</h2>
+          <p class="section-subtitle">
+            Connect with the HWI × VVITU chapter leadership and stay updated through official communication media.
+          </p>
+        </div>
+
+        <div class="pillars-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <!-- Contact Card 1: Official Queries Mailbox -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Queries & Inquiries</h3>
+            <p class="pillar-desc">
+              For student questions, event coordination, hackathon inquiries, and chapter communications. Send direct queries to our official mailbox:
+            </p>
+            <a href="mailto:ajayhemanth90@gmail.com" class="btn btn-outline btn-sm" style="align-self: flex-start; margin-top: auto; word-break: break-all;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              ajayhemanth90@gmail.com
+            </a>
+          </article>
+
+          <!-- Contact Card 2: Official WhatsApp Community (Mandatory) -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap" aria-hidden="true" style="background-color: #ECFDF5; border-color: #A7F3D0; color: #059669;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Official WhatsApp Community</h3>
+            <p class="pillar-desc">
+              The verified group for HWI × VVITU students to receive hackathon announcements and discuss community initiatives.
+            </p>
+            <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-outline btn-sm" style="align-self: flex-start; margin-top: auto;">
+              Join WhatsApp Group
+            </a>
+          </article>
+
+          <!-- Contact Card 3 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Campus Location</h3>
+            <p class="pillar-desc">
+              VVITU Campus • Technical Education & Innovation Wing. In-person meetups and hackathons will be held in designated campus auditoriums.
+            </p>
+            <span class="badge badge-category" style="align-self: flex-start; margin-top: auto;">
+              On-Campus Chapter
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <div class="brand">
+            <img src="logo.svg" alt="HackWithIndia Logo" class="brand-logo-img" width="44" height="44">
+            <div class="brand-text">
+              <span class="brand-title">HWI <span class="brand-accent">×</span> VVITU</span>
+              <span class="brand-subtitle">Hackathon Community</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            The dedicated digital portal connecting HackWithIndia's national hackathon community with the student body at VVITU. Bridging students with verified competitions, workshops, and collaborative innovation.
+          </p>
+          <div class="footer-status-pill">
+            <span class="hero-tag-pulse" aria-hidden="true"></span>
+            <span>Platform Status: Milestone 1 Static Preview (Supabase Integration Planned)</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links Column -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#hackathons" class="footer-link">Discover Hackathons</a></li>
+            <li><a href="#opportunities" class="footer-link">Opportunities Board</a></li>
+            <li><a href="#value" class="footer-link">Why Students Participate</a></li>
+            <li><a href="#notifications" class="footer-link">Announcements</a></li>
+            <li><a href="#whatsapp" class="footer-link">WhatsApp Group</a></li>
+            <li><a href="#events" class="footer-link">Campus Events</a></li>
+            <li><a href="#contact" class="footer-link">Contact & Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Community Information Column (Mandatory Requirement 1: Footer WhatsApp Link) -->
+        <div>
+          <h4 class="footer-col-title">Community</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="footer-link" style="display: inline-flex; align-items: center; gap: 6px; color: #047857; font-weight: var(--font-weight-medium);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.93 7.44 8.74 7.45 8.57 7.76C8.38 8.11 7.86 8.6 7.86 9.61C7.86 10.62 8.6 11.59 8.7 11.73C8.81 11.87 10.15 13.93 12.21 14.82C13.89 15.55 14.23 15.4 14.6 15.37C14.97 15.33 15.8 14.88 15.97 14.4C16.14 13.92 16.14 13.51 16.09 13.43C16.04 13.34 15.9 13.29 15.69 13.18C15.48 13.08 14.44 12.56 14.24 12.49C14.05 12.42 13.91 12.38 13.77 12.59C13.63 12.8 13.23 13.29 13.11 13.43C12.99 13.57 12.87 13.58 12.66 13.48C12.45 13.38 11.78 13.16 10.98 12.45C10.36 11.9 9.94 11.22 9.82 11.01C9.7 10.8 9.81 10.69 9.91 10.58C10.01 10.48 10.12 10.33 10.23 10.21C10.34 10.09 10.37 10 10.45 9.85C10.53 9.7 10.49 9.57 10.43 9.46C10.37 9.35 9.97 8.35 9.8 7.95C9.64 7.55 9.47 7.61 9.34 7.6C9.22 7.6 9.11 7.6 9.11 7.44Z"/>
+                </svg>
+                WhatsApp Community (Official)
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ajayhemanth90@gmail.com" class="footer-link" style="display: inline-flex; align-items: center; gap: 6px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Queries: ajayhemanth90@gmail.com
+              </a>
+            </li>
+            <li><a href="#hackathons" class="footer-link">Hackathon Discovery</a></li>
+            <li><span class="footer-link" style="color: var(--color-text-muted);">Team Profiles (Pending Verification)</span></li>
+          </ul>
+        </div>
+
+        <!-- Governance Column -->
+        <div>
+          <h4 class="footer-col-title">Governance</h4>
+          <p class="footer-brand-desc" style="font-size: var(--font-size-xs);">
+            HackWithIndia represents the broader national hackathon community. VVITU represents the campus student community participating in this initiative.
+          </p>
+          <div style="margin-top: 1rem;">
+            <a href="admin/login.html" class="btn btn-secondary btn-sm" style="width: fit-content;">
+              Admin Login
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © <span id="current-year">2026</span> HackWithIndia × VVITU. Connecting India's Hackathon Community. All verified rights reserved.
+        </p>
+        <a href="admin/login.html" class="footer-admin-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Admin Command Center
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Accessible Modal Dialog: Informational Dialog -->
+  <dialog id="join-modal" class="modal" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <h3 id="modal-title" class="modal-title">Join HWI × VVITU Community</h3>
+      <button type="button" class="modal-close-btn" data-action="close-join-modal" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: var(--line-height-base);">
+        The primary and official communication channel for the HWI × VVITU community is our verified WhatsApp group.
+      </p>
+
+      <div style="background-color: #ECFDF5; border: 1px solid #A7F3D0; border-radius: var(--radius-md); padding: var(--spacing-4); display: flex; flex-direction: column; gap: var(--spacing-2);">
+        <strong style="color: #047857; font-size: var(--font-size-sm);">Official WhatsApp Community:</strong>
+        <p style="font-size: var(--font-size-xs); color: #065F46; line-height: 1.4; margin: 0;">
+          Join fellow students to receive direct hackathon announcements, collaborate on projects, and connect with chapter organizers.
+        </p>
+        <a href="https://chat.whatsapp.com/CLmMzR687dxH735YlNae6T" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="margin-top: 4px; width: fit-content;">
+          Open WhatsApp Community
+        </a>
+      </div>
+
+      <div style="border-top: 1px solid var(--color-border); padding-top: var(--spacing-3); font-size: var(--font-size-xs); color: var(--color-text-muted);">
+        Direct email subscription capabilities will be integrated with our Supabase database in Phase 7.
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; margin-top: var(--spacing-2);">
+        <button type="button" class="btn btn-secondary btn-sm" data-action="close-join-modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ES6+ Modules Entry Point -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

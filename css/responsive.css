@@ -1,0 +1,308 @@
+/**
+ * Responsive Styles & Media Queries
+ * Mobile Navigation Drawer & Multi-Device Optimizations
+ */
+
+/* ==========================================================================
+   1. Mobile Navigation Drawer & Backdrop
+   ========================================================================== */
+
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.mobile-nav-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  max-width: 85vw;
+  height: 100vh;
+  background-color: var(--color-bg-body);
+  border-left: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-drawer);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6);
+  visibility: hidden;
+  transition: right var(--transition-normal), visibility var(--transition-normal);
+  overflow-y: auto;
+}
+
+.mobile-nav.is-open {
+  right: 0;
+  visibility: visible;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-6);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-6);
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-8);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.is-active {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+
+/* ==========================================================================
+   2. Desktop Breakpoint (> 1024px)
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   3. Tablet & Small Laptop (769px - 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+
+  .hero-visual {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hackathons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .notifications-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .opportunities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whatsapp-card {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-8) var(--spacing-6);
+  }
+
+  .join-card {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-10) var(--spacing-8);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+
+/* ==========================================================================
+   4. Mobile Devices (< 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 4rem;
+    --container-padding: 1.25rem;
+  }
+
+  .section {
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
+  }
+
+  .hero {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-12);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-description {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .hero-trust-notes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hackathons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .channels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .join-card {
+    padding: var(--spacing-8) var(--spacing-6);
+  }
+
+  .join-title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+
+/* ==========================================================================
+   5. Small Mobile Phones (< 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .brand-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .empty-state-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .empty-state-actions .btn {
+    width: 100%;
+  }
+
+  .hackathon-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
