@@ -308,7 +308,7 @@ function initSettingsForm() {
         tagline: $('#setting-tagline').value.trim(),
         hero_headline: $('#setting-hero-headline').value.trim(),
         hero_subheadline: $('#setting-hero-subheadline').value.trim(),
-        campus_location: $('#setting-campus-location').value.trim(),
+        campus_location: $('#setting-campus-location') ? $('#setting-campus-location').value.trim() : '',
         events_notice: $('#setting-events-notice').value.trim(),
         updated_at: new Date().toISOString()
       };

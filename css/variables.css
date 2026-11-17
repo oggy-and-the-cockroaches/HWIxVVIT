@@ -1,6 +1,6 @@
 /**
  * Design Tokens & CSS Custom Properties
- * Light Theme System for HWI × VVITU Community Platform
+ * Light Cream Theme System for HWI × VVITU Community Platform
  */
 
 :root {
@@ -14,17 +14,17 @@
   --color-accent-subtle: #EFF6FF;  /* Soft Ice Blue */
   --color-accent-border: #BFDBFE;  /* Crisp blue outline */
   
-  /* Neutral Backgrounds (Light Theme Only) */
-  --color-bg-body: #FFFFFF;
-  --color-bg-surface: #F8FAFC;     /* Slate 50 */
-  --color-bg-card: #FFFFFF;
-  --color-bg-muted: #F1F5F9;       /* Slate 100 */
-  --color-bg-hover: #F8FAFC;
+  /* Neutral Backgrounds (Light Cream & Warm Alabaster Theme) */
+  --color-bg-body: #FAF8F5;        /* Light Cream Alabaster Canvas */
+  --color-bg-surface: #F3EFE8;     /* Soft Light Warm Stone Surface */
+  --color-bg-card: #FFFFFF;        /* Crisp Elevated White Card */
+  --color-bg-muted: #EBE6DC;       /* Muted Cream Element Background */
+  --color-bg-hover: #F0ECE4;       /* Interactive Hover Cream */
   
   /* Text Typography Colors */
-  --color-text-primary: #0F172A;   /* Slate 900 - High Contrast */
-  --color-text-secondary: #334155; /* Slate 700 - Highly Legible */
-  --color-text-muted: #64748B;     /* Slate 500 */
+  --color-text-primary: #0F172A;   /* Slate 900 - High Contrast (16.8:1) */
+  --color-text-secondary: #334155; /* Slate 700 - Highly Legible (9.8:1) */
+  --color-text-muted: #64748B;     /* Slate 500 - Refined Neutral (4.6:1) */
   --color-text-inverted: #FFFFFF;
   
   /* Functional / Status Colors */
@@ -41,9 +41,9 @@
   --color-error-border: #FECACA;
   
   /* Borders & Dividers */
-  --color-border: #E2E8F0;         /* Slate 200 */
-  --color-border-subtle: #F1F5F9;  /* Slate 100 */
-  --color-border-strong: #CBD5E1;  /* Slate 300 */
+  --color-border: #E0DDD4;         /* Warm Sand/Stone Border */
+  --color-border-subtle: #ECE8E0;  /* Subtle Warm Border */
+  --color-border-strong: #C8C3B8;  /* Strong Warm Border */
   --color-border-focus: #0066FF;
   
   /* Typography Scale */

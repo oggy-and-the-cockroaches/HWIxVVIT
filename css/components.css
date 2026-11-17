@@ -13,10 +13,12 @@
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   z-index: var(--z-header);
-  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal), background-color var(--transition-normal);
 }
 
 .header.is-scrolled {
@@ -344,7 +346,7 @@
 .hero {
   padding-top: var(--spacing-16);
   padding-bottom: var(--spacing-20);
-  background: radial-gradient(circle at 80% 20%, rgba(239, 246, 255, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+  background: radial-gradient(circle at 80% 20%, rgba(219, 234, 254, 0.5) 0%, rgba(250, 248, 245, 0) 65%);
   position: relative;
   overflow: hidden;
 }
@@ -415,27 +417,52 @@
 .hero-trust-notes {
   display: flex;
   align-items: center;
-  gap: var(--spacing-6);
-  padding-top: var(--spacing-4);
+  gap: var(--spacing-3);
+  padding-top: var(--spacing-5);
   border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
 }
 
 .trust-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--spacing-2);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.trust-item:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .trust-icon {
-  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.trust-icon-blue {
+  color: #0066FF;
+}
+
+.trust-icon-navy {
+  color: #0A2540;
+}
+
+.trust-icon-green {
+  color: #059669;
 }
 
 /* Hero Technical Card / Code Graphic (CSS/SVG Based) */
 .hero-card {
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
@@ -1059,7 +1086,7 @@ dialog.modal {
   padding: 0;
   max-width: 500px;
   width: 90%;
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1122,7 +1149,7 @@ dialog.modal::backdrop {
   font-family: inherit;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   color: var(--color-text-primary);
   transition: border-color var(--transition-fast);
 }
@@ -1249,9 +1276,9 @@ dialog.modal::backdrop {
 }
 
 .badge-completed {
-  background-color: #F1F5F9;
-  color: #64748B;
-  border: 1px solid #CBD5E1;
+  background-color: var(--color-bg-muted);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
 }
 
 .hackathon-organizer {
@@ -1583,7 +1610,7 @@ dialog.modal::backdrop {
 }
 
 .whatsapp-card {
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   border: 1.5px solid #BBF7D0;
   border-radius: var(--radius-xl);
   padding: var(--spacing-10) var(--spacing-8);

@@ -175,7 +175,7 @@
 }
 
 .metric-tile {
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--spacing-5);
@@ -220,7 +220,7 @@
 }
 
 .admin-card {
-  background-color: var(--color-bg-body);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-sm);
@@ -304,7 +304,7 @@
 }
 
 .data-table tbody tr:hover {
-  background-color: rgba(248, 250, 252, 0.7);
+  background-color: var(--color-bg-hover);
 }
 
 .data-table tbody tr:last-child td {
